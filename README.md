@@ -1,2 +1,2 @@
-# 3d-crystal
-## https://isaac-py.github.io/3d-crystal/
+# example of the simple cube in the AR
+## https://isaac-py.github.io/AR-cube/
