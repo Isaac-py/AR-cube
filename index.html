@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
   <title>View in AR</title>
   <style>
     body {
@@ -15,19 +18,34 @@
       background: #f0f0f0;
       gap: 10px;
     }
-    a.ar-button {
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #007aff;
+    model-viewer {
+      width:250vw;
+      height: 250vh;
+    }
+    model-viewer::part(ar-button) {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      
+      background-color: #FF2400;
       color: white;
-      text-decoration: none;
       border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 18px
     }
   </style>
 </head>
 <body>
-  <a class="ar-button" rel="ar" href="example.usdz">
-    View in AR
-  </a>
+  <model-viewer 
+    src="chinese_iron_podium_success.glb" 
+    ios-src="chinese_iron_podium_success.usdz"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate>
+
+    <button slot="ar-button">View in AR</button>
+    
+  </model-viewer>
 </body>
 </html>
